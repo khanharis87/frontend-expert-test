@@ -6,20 +6,24 @@ import {SET_STORE} from './mutation-types'
 
 Vue.use(Vuex)
 
+//Vuex store https://vuex.vuejs.org/en/core-concepts.html
 export default new Vuex.Store({
+  //Initial state
     state:{
       data: {
         bounds: {},
         rows: []
       }
     },
+    //Mutations to state
     mutations: {
       [SET_STORE](state, payload) {
         state.data =  payload
       }
     },
+    //Actions: they commit mutations
     actions: {
-      getAll({commit}) {
+      setStore({commit}) {
         const URI = 'https://www.deskbookers.com/nl-nl/search/ajax.json'
         return axios.get(URI).then(response => {
           commit('SET_STORE', response.data)
@@ -28,10 +32,8 @@ export default new Vuex.Store({
         })
       }
     },
+    //Getters
     getters: {
-      getAll(state) {
-        return state.data
-      },
       rows(state) {
         return state.data.rows
       },
@@ -40,9 +42,6 @@ export default new Vuex.Store({
       },
       locations(state) {
         return state.data.rows.map((row) => row.coordinate)
-      },
-      loadMap(state) {
-        return state.loadMap
       }
     }
   })

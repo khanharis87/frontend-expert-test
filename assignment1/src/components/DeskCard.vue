@@ -13,8 +13,7 @@
 <script>
     export default {
         name: 'desk-card',
-        props:['desk'],
-
+        props:['desk']
     }
 </script>
 

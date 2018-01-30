@@ -10,6 +10,8 @@ import GoogleMapsLoader from 'google-maps'
 
 	export default {
     name: 'db-map',
+    //Component Lifecyle hook, it suppose to load google maps with given bounds and markers
+    //for locations given 
     mounted() {
       const el = document.getElementById('map')
       GoogleMapsLoader.KEY = 'AIzaSyAteewzC5dESwC4rgFXhhDqMk_yUi3N8cQ'
@@ -29,7 +31,6 @@ import GoogleMapsLoader from 'google-maps'
           return new google.maps.Marker({
             position: latLngPos,
             map,
-            clickable: true,
             label: this.rows[i].name
           })
         })

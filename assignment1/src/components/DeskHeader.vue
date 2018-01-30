@@ -11,7 +11,12 @@
 <script>
 export default {
     name: 'desk-header',
-    props: ['title']
+    props: {
+        title: {
+            type: String,
+            default: 'Deskbookers'
+        }
+    }
 }
 </script>
 
