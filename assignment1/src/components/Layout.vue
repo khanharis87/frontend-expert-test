@@ -1,5 +1,5 @@
 <template>
-    <div class="deskbooker-container container"> 
+    <div class="deskbooker-container container">
         <slot name="header"></slot>
         <div class="row">
             <div class="col-4">
@@ -15,7 +15,9 @@
 </template>
 
 <style>
-deskbooker-container {
+
+.deskbooker-container {
   margin: 0
 }
+
 </style>

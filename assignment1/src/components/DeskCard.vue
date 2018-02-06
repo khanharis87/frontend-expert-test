@@ -11,10 +11,10 @@
 
 
 <script>
-    export default {
-        name: 'desk-card',
-        props:['desk']
-    }
+export default {
+    name: 'desk-card',
+    props:['desk']
+}
 </script>
 
 <style>
